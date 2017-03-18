@@ -33,3 +33,8 @@ Brief summary of the memory management in Swift can be found [here](MemoryManage
 - [ ] nsuserdefaults wrapper
 - [ ] multipart datatask request 
 - [ ] imageview download image sync and support for re-use (klustr)
+- [ ] Breif overview of design patterns
+- [ ] GCD breif  overview and examples
+- [ ] Operation breif  overview and examples
+- [ ] Core data breif overview
+- [ ] Swift properties examples
