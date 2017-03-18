@@ -30,8 +30,8 @@ extension UIViewController {
         */
         dispatch_once(&Static.token) {
             let originalSelector = Selector("viewWillAppear:")
-            let swizzledSelector = Selector("nsh_viewWillAppear:")
-
+            let swizzledSelector = Selector("dc_viewWillAppear:"). //make sure to prefix your method with something that is not likely to collide
+            
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
 
@@ -47,8 +47,8 @@ extension UIViewController {
 
     // MARK: - Method Swizzling
 
-    func nsh_viewWillAppear(animated: Bool) {
-        self.nsh_viewWillAppear(animated). //will call the original viewWillAppear(:) method which is at this point swizzled 
+    func dc_viewWillAppear(animated: Bool) {
+        self.dc_viewWillAppear(animated). //will call the original viewWillAppear(:) method which is at this point swizzled 
         
         // Do whaterver ...
     }
