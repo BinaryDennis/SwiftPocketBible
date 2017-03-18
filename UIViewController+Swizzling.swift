@@ -6,12 +6,12 @@ extension UIViewController {
     calls its first method on that class or an instance of that class. Both are optional, and are executed only 
     if the method is implemented.
     Because method swizzling affects global state, it is important to minimize the possibility of race conditions. 
-    +load is guaranteed to be loaded during class initialization, which provides a modicum of consistency for 
+    +load() is guaranteed to be loaded during class initialization, which provides a modicum of consistency for 
     changing system-wide behavior. By contrast, +initialize provides no such guarantee of when it will be 
     executed—in fact, it may never be called, if that class is never messaged directly by the app.
     
-    Unfortunately, a load class method implemented in Swift is never called by the runtime. 
-    Swizzling using the +initialize() method CAN be done safely, as long as you check the type at execution time and 
+    Unfortunately, a load class method, +load(), implemented in Swift is never called by the runtime. 
+    Swizzling by implementing +initialize() CAN be done safely, as long as you check the type at execution time and 
     wrap the swizzling in dispatch_once.
     */
     public override class func initialize() {
