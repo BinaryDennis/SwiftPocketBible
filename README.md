@@ -25,3 +25,6 @@ Swift Utilites
 - isPalindrome
 - findMaxSingleSellProfit
 - custom fun iterators
+- swizzling 
+- associated objects wrapper
+- nsuserdefaults wrapper
