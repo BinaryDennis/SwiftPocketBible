@@ -42,5 +42,5 @@ Each object has 2 reference counters inside of them
 The **weak** reference counter for all objects is stored in a **global table**.
 
 If an objects strong reference count becomes 0, its dealloced from memory, but only if it's unowned reference count is also 0. 
-If the unowned reference count is not 0, when the strong reference count becomes 0, the objects memory still allocated but marked as invalid. 
+If the unowned reference count is not 0, when the strong reference count becomes 0, the objects memory still allocated but marked as invalid. This is whats called a **zombie** memory.
 In this case, the will be a runtime crash, when an unowned reference to this object is accessed.
