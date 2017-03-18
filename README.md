@@ -3,6 +3,8 @@
 
 Improve this README file.....
 
+Brief summary of the memory management in Swift can be found [here](MemoryManagement.md)
+
 ## TBD :camel:
 - [x] swizzling 
 - [x] associated objects
