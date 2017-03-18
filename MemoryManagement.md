@@ -7,6 +7,16 @@ Each time a strong reference to an object is created, the (strong) reference cou
 When that reference is removed, variable holding that reference is set to nil, the (strong) reference count of that object decreases.
 Once the (strong) reference count of an object is 0, the object gets deallocted from memory (unless its unowned reference count is not zero, read more about that below).
 
+Classes are not the only kind of reference type in Swift. Funtions (including closures) are reference types too.
+If a closure "captures" a variable that is a reference type, then the closure will maintain a strong reference (increasing its strong reference count) to that object. 
+To avoid strong references in closures, use a **capture list** and specify _weak_ or _unowned_ before the variable name.
+```swift
+controller.delegate = { [weak view] in
+  print("the view: \(view)")
+}
+```
+
+
 Swift value types obviosly don't use reference counter as they are copied when passed along.
 
 
@@ -18,20 +28,29 @@ There are 3 types of references in Swift
   - always increases the reference count 
   - can be an _optional_ or not
   - can be _let_ or _var_
-  - example: ```var name : String? ```
+  ```swift
+    // examaple:
+    var name : String?
+  ```
   
 2. **Weak**
   - does not touch reference count
   - will be set to **nil** once the referred objects gets dealloced
   - must be an _optional_
   - must be a _var_
-  - example: ```weak var delegate : CallbackDelegate? ```
+  ```swift 
+    // examaple:
+    weak var delegate : CallbackDelegate? 
+  ```
   
 3. **Unowned**
   - does not touch reference count
   - must be an _non-optional_
   - must be a _let_
-  - example: ```unowned let window : UIWindow ```
+  ```swift
+    // examaple:
+    unowned let window : UIWindow 
+  ```
 
 
 ## Reference counters
