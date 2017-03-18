@@ -3,9 +3,13 @@
 
 Improve this README file.....
 
-Brief summary of the memory management in Swift can be found [here](MemoryManagement.md)
+## General info
 
-## TBD :camel:
+### Memory management
+:camel: Brief summary of the memory management in Swift can be found in this file [MemoryManagement.md](MemoryManagement.md)
+
+
+## To be added 
 - [x] swizzling 
 - [x] associated objects
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
