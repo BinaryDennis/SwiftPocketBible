@@ -38,3 +38,4 @@ Brief summary of the memory management in Swift can be found [here](MemoryManage
 - [ ] Operation breif  overview and examples
 - [ ] Core data breif overview
 - [ ] Swift properties examples
+- [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)
