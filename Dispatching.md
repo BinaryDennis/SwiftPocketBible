@@ -16,9 +16,26 @@ Polymorphic behavior, i.e. behavior that varies depending on the types involved
 - Protocol methods **[static or dynamic]**
 
 ### Subclassing
+Subclassing obviously uses **dynamic** dispatching.
+
+```swift
+
+class Orange {
+    var price : Int { return 5 }
+}
+
+class RedOrange : Orange {
+    override var price: Int { return 7 }
+}
+
+let o : Orange = RedOrange() //static type is Orange but dyanmic type is RedOrange
+
+//Dynamic dispatched because its a subclass
+o.price   //7
+```
 
 
-### Function overloading  
+### Function overloading  
 It’s important to note that overloads are **resolved statically** at compile time. 
 This means the compiler bases its decision of which overload to call on the static types of the variables involved, and not on the values' dynamic types at runtime.
 
