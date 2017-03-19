@@ -53,16 +53,7 @@ Making a property injection robust is **surprisingly tricky**. For example, do y
 
 
 ```swift
-protocol Printer {
-    func print(paper: String) -> String
-}
-
-struct LaserPrinter : Printer {
-    
-    func print(paper: String) -> String {
-        return "printing..." + paper
-    }
-}
+//see Printer and LaserPrinter definitions in example for Constructor injection
 
 class Secretary {
     private var _printer : Printer?
@@ -93,10 +84,22 @@ class Secretary {
 ```
 
 ## 3. Method Injection
-In constructor injection, a dependency is passed into the constructor and captured for later use.
+In Method injection, a dependency is simply passed as an argument to the method. 
+
+Method injection is good when the dependency will vary with each call. This could perhpas be a random number or the current time.
 
 ```swift
-//FIX example
+//see Printer and LaserPrinter definitions in example for Constructor injection
+
+class Secretary {
+    
+    func pleasePrint(papers: [String], printer: Printer) {
+        for paper in papers {
+            printer.print(paper: paper)
+        }
+    }
+}
+
 ```
 
 ## 4. Ambient Context
