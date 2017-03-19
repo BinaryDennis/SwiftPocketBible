@@ -6,12 +6,16 @@ Improve this README file.....
 ## General info
 
 ### Memory management
-:camel: Brief summary of the memory management in Swift can be found in this file [MemoryManagement.md](MemoryManagement.md)
+:camel: Brief summary of the memory management in Swift [MemoryManagement.md](MemoryManagement.md)
 
+### Dispatching
+:camel: Brief summary of method dispatching in Swift [Dispatching.md](Dispatching.md)
 
 ## To be added 
 - [x] swizzling 
 - [x] associated objects
+- [x] summary of memory management
+- [x] summary of method dispatching
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
 - [ ] dequeue
