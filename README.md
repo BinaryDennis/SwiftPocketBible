@@ -17,6 +17,7 @@ Improve this README file.....
 - [x] summary of memory management
 - [x] summary of method dispatching
 - [ ] Protocol examples
+- [ ] Dependency injection examples
 - [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
