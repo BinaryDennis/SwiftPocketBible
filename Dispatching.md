@@ -13,6 +13,8 @@ Polymorphic behavior, i.e. behavior that varies depending on the types involved
 2. Function overloading - where a function is written multiple times for different types **[static dispatch]**
 3. Generics **[static dispatch]**
 
+- Protocol methods **[static or dynamic]**
+
 ### Subclassing
 
 
@@ -49,6 +51,9 @@ makeNoise(dog2)  //bella says muuu   - statically dog2 is of type Animal and not
 ```
 
 ### Generics
+
+
+### Protocols methods
 Generic programming in Swift wouldn’t be possible without protocols.
 
 Protocol requirements are dispatched **dynamically**, whereas methods that are only defined in an extension use **static** dispatch.
