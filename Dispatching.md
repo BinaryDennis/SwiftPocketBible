@@ -49,5 +49,65 @@ makeNoise(dog2)  //bella says muuu   - statically dog2 is of type Animal and not
 ```
 
 ### Generics
+Generic programming in Swift wouldn’t be possible without protocols.
 
+Protocol requirements are **dispatched** dynamically, whereas methods that are only defined in an extension use **static** dispatch.
+
+```swift
+protocol Drivable {
+    
+    func drive() -> String
+    func reverse() -> String
+    
+}
+
+extension Drivable {
+    
+    //default implementation of reverse()
+    func reverse() -> String {
+        return "beep beep beep beep...reversing"
+    }
+    
+    //Not a protocol requirement
+    func park() -> String {
+        return "parked. ZZzzz"
+    }
+    
+}
+
+class Volvo : Drivable {
+    
+    func drive() -> String {
+        return "Volvo is driving..."
+    }
+}
+
+class Ferrari : Drivable {
+    
+    func drive() -> String {
+        return "Ferrari is driving..."
+    }
+    
+    func park() -> String {
+        return "Ferrari refuses to stand still, wrooom!"
+    }
+}
+
+let ferrari : Ferrari = Ferrari()
+let drivable : Drivable = Ferrari()  //static type is Drivable but dyanmic type is Ferrari!
+
+ferrari.drive()      //Ferrari is driving
+ferrari.reverse()    //beep beep beep...reversing
+
+//Swift picks the most specialized method based on static type
+ferrari.park()       //Ferrari refuses to stand still, wroom!
+
+drivable.drive()     //Ferrari is driving
+drivable.reverse()   //beep beep beep...reversing
+
+//Static dispatch becuase park() is not a protocol requirement
+drivable.park()      //parked. ZZzzzz
+
+
+```
 
