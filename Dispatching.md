@@ -7,15 +7,14 @@ This also means the compiler might be able to **inline** the function, i.e. not
 Methods on classes or protocols can be _dynamically_ dispatched. 
 
 ## Polymorphism
-Polymorphic behavior, i.e. behavior that varies depending on the types involved, can be achieved in 3 ways in Swift
+Polymorphic behavior, i.e. behavior that varies depending on the types involved, can be achieved in 4 ways in Swift
 
 1. Subclassing and overriding methods of parent class **[dynamic dispatch]**
 2. Function overloading - where a function is written multiple times for different types **[static dispatch]**
 3. Generics **[static dispatch]**
+4. Protocol methods **[static or dynamic]**
 
-- Protocol methods **[static or dynamic]**
-
-### Subclassing
+### 1. Subclassing
 Subclassing obviously uses **dynamic** dispatching.
 
 ```swift
@@ -35,7 +34,7 @@ o.price   //7
 ```
 
 
-### Function overloading  
+### 2. Function overloading  
 It’s important to note that overloads are **resolved statically** at compile time. 
 This means the compiler bases its decision of which overload to call on the static types of the variables involved, and not on the values' dynamic types at runtime.
 
@@ -67,10 +66,10 @@ makeNoise(dog1)  //bella says woff
 makeNoise(dog2)  //bella says muuu   - statically dog2 is of type Animal and not Dog
 ```
 
-### Generics
+### 3. Generics
 
 
-### Protocols methods
+### 4. Protocols methods
 Generic programming in Swift wouldn’t be possible without protocols.
 
 Protocol requirements are dispatched **dynamically**, whereas methods that are only defined in an extension use **static** dispatch.
