@@ -6,10 +6,13 @@ Improve this README file.....
 ## General info
 
 ### Memory management
-:camel: Brief summary of the memory management in Swift [MemoryManagement.md](MemoryManagement.md)
+:camel: Swift [memory management](MemoryManagement.md) overview
 
 ### Dispatching
-:camel: Brief summary of method dispatching in Swift [Dispatching.md](Dispatching.md)
+:camel: Swift [dispatching](Dispatching.md) primer
+
+### Dependency Injection
+:camel: [Dependency Injection](DependencyInjection.md) 101
 
 ## To be added 
 - [x] swizzling 
@@ -17,7 +20,7 @@ Improve this README file.....
 - [x] summary of memory management
 - [x] summary of method dispatching
 - [ ] Protocol examples
-- [ ] Dependency injection examples
+- [x] Dependency injection examples
 - [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
