@@ -16,6 +16,7 @@ Improve this README file.....
 - [x] associated objects
 - [x] summary of memory management
 - [x] summary of method dispatching
+- [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
 - [ ] dequeue
