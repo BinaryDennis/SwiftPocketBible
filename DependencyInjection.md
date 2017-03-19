@@ -103,16 +103,60 @@ class Secretary {
 ```
 
 ## 4. Ambient Context
-In constructor injection, a dependency is passed into the constructor and captured for later use.
+When the dependency is accessed through a class method (such as a singleton), then there are two ways to control that dependency from a test:
+
+1. If you control the singleton, you may be able to expose its properties to control its state.
+
+2. If fiddling with properties is insufficient, or the singleton isn’t yours to control, then it’s time to **swizzle**: replace the class method so that it returns the fake you need.
+
+Also, if you have a dependency that cuts cross layers of functionaltiy, it migth be better to use an ambient context, i.e. a **global object**. A good candidate for this is logging or analytics. 
+
+Just be aware in your test files to **reset** the global object, in _setup()_ and _tearDown()_.
 
 ```swift
 //FIX example
 ```
 
 ## 5. Extract and Override Call
-In constructor injection, a dependency is passed into the constructor and captured for later use.
+Extract and Override Call consists of 4 parts.
+
+1. Extract all references to the dependency into a new method
+2. Change other places where the dependency is referenced, replacing them with calls to the new method
+3. Create a special testing subclass
+4. Override the newly added method
+
+Because extract and override call is so simple and powerful, you may be tempted to use it everywhere. But because it requires test-specific subclasses, it’s easy for tests to become fragile.
+That said, it’s effective with legacy code, especially when you don’t want to change all the calling points
 
 ```swift
-//FIX example
+//see Printer and LaserPrinter definitions in example for Constructor injection
+
+struct StubPrinter: Printer {
+    func print(paper: String) -> String {
+        return "I can't print, Im a dumb stub"
+    }
+}
+
+class Secretary {
+    
+    func pleasePrint(papers: [String]) {
+        for paper in papers {
+            printer().print(paper: paper)
+        }
+    }
+    
+    func printer() -> Printer {
+        return LaserPrinter()
+    }
+}
+
+
+
+class TestSecretary : Secretary {
+    
+    override func printer() -> Printer {
+        return StubPrinter()
+    }
+}
 ```
 
