@@ -15,16 +15,74 @@ There are a few types of dependency injection
 
 ## 1. Construction Injection
 In constructor injection, a dependency is passed into the constructor and captured for later use.
+Constructor injection should be your **weapon of choice**. When in doubt, start here. The advantage is that it makes dependencies explicit.
 
 ```swift
-//FIX example
+protocol Printer {
+    func print(paper: String) -> String
+}
+
+struct LaserPrinter : Printer {
+    
+    func print(paper: String) -> String {
+        return "printing..." + paper
+    }
+}
+
+class Secretary {
+    let printer: Printer
+
+    init(printer: Printer) {
+        self.printer = printer
+    }
+    
+    func pleasePrint(papers: [String]) {
+        for paper in papers {
+            self.printer.print(paper: paper)
+        }
+    }
+}
 ```
 
 ## 2. Property Injection
 In constructor injection, a dependency is passed into the constructor and captured for later use.
 
 ```swift
-//FIX example
+protocol Printer {
+    func print(paper: String) -> String
+}
+
+struct LaserPrinter : Printer {
+    
+    func print(paper: String) -> String {
+        return "printing..." + paper
+    }
+}
+
+class Secretary {
+    private var _printer : Printer?
+    
+    var printer: Printer {
+        //In case the printer has not been set by client
+        //before its needed, eg in pleasePrint(), fallback
+        //on a default printer
+        get {
+            if _printer == nil {
+                _printer = LaserPrinter()
+            }
+            return _printer!
+        }
+        set {
+            _printer = newValue
+        }
+    }
+
+    func pleasePrint(papers: [String]) {
+        for paper in papers {
+            self.printer.print(paper: paper)
+        }
+    }
+}
 ```
 
 ## 3. Method Injection
