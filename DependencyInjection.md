@@ -1,11 +1,11 @@
 # Dependency Injection
 
 There are various techniques for taking a dependency and injecting something else in its place. 
-Swizzling, dynamically replacing one method with another, is one technique. 
+
+**Swizzling**, dynamically replacing one method with another, is one technique. 
 Some even argue that swizzling makes DI unnecessary, but most will argue that its better to have code that makes dependencies explicit, so they are visible, for example in test cases.
 
-There are a few types of dependency injection
-
+There are a few types of dependency injection:
 1. Constructor injection
 2. Property Injection
 3. Method Injection
@@ -45,7 +45,12 @@ class Secretary {
 ```
 
 ## 2. Property Injection
-In constructor injection, a dependency is passed into the constructor and captured for later use.
+In property injection, a dependency is assumed to have been set in a variable, for later use. 
+
+The advantage and disadvantage of property injection is that it separates initialization from injection.
+
+Making a property injection robust is **surprisingly tricky**. For example, do you need to make the getter thread-safe? Should you guard against the property being reset arbitrarily? What is a good candidate as a default value? Make sure the default value doesn’t refer to another library!
+
 
 ```swift
 protocol Printer {
@@ -73,7 +78,9 @@ class Secretary {
             return _printer!
         }
         set {
-            _printer = newValue
+            if _printer == nil {
+                _printer = newValue
+            }
         }
     }
 
