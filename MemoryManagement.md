@@ -1,6 +1,6 @@
 # Memory Management
 
-For _reference_ types, i.e. classes and functions (including closures), Swift uses automated reference counting (ARC) to manage memory. 
+For _reference_ types, i.e. classes, Swift uses automated reference counting (ARC) to manage memory. 
 This is done at compile-time and is thus much better than traditional garbage collection which is done at run-time.
 
 Each time a strong reference to an object is created, the (strong) reference count of that object increases.
