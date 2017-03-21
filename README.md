@@ -21,6 +21,7 @@ Improve this README file.....
 - [x] summary of method dispatching
 - [ ] Protocol examples
 - [x] Dependency injection examples
+- [ ] Background tasker
 - [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
