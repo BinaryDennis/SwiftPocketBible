@@ -14,13 +14,18 @@ Improve this README file.....
 ### Dependency Injection
 :camel: [Dependency Injection](DependencyInjection.md) 101
 
+### Thread Safety
+:camel: [Thread Safety](ThreadSafety.md) overview
+
+### Swizzling
+:camel: [Swizzling](UIViewController+Swizzling.swift) example
+
+### Associated Objects
+:camel: [Associated objects](UIViewController+AscObject.swift) example
+
+
 ## To be added 
-- [x] swizzling 
-- [x] associated objects
-- [x] summary of memory management
-- [x] summary of method dispatching
 - [ ] Protocol examples
-- [x] Dependency injection examples
 - [ ] Background tasker
 - [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
