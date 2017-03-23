@@ -3,7 +3,7 @@
 
 Thread safety basically means ensuring that a given object can be accessed from different threads "at the same time" without it causing any problems.
 
-For example, a Singelton should make sure that any mutable data it has which is read and written to by other objects (i.e shared data), is protected so that a given object cannot write to the shared mutable data while anohter object is reading from the same shared data.
+For example, a Singelton should make sure that any mutable data it has which is read and written to by other objects (i.e shared data), is protected so that a given object cannot write to the shared mutable data while another object is reading from the same shared data.
 
 There are a few ways of protecting shared data, i.e. making it thread safe.
 
