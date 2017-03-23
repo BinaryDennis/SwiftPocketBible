@@ -11,20 +11,20 @@ There are a few ways of protecting shared data, i.e. making it thread safe.
 1. Dispatch barriers
 
 ```swift
-class NespressoCoffeMachine {
+struct NespressoCoffeMachine {
     private var soldInCountries = ["Sweden", "Italy", "Germany"]
-    let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent)
+    let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent) //Thread-safety
 
     var soldIn : [String] {
-        let result = myDispatchQueue.sync {
-            return soldInCountries  //Thread-safe
+        let result = myDispatchQueue.sync { //Thread-safety
+            return soldInCountries  
             }
         return result
     }
 
     func addCountry(country: String) {
-        myDispatchQueue.async(flags: .barrier) {
-           self.soldInCountries.append(country) //Thread-safe
+        myDispatchQueue.async(flags: .barrier) { //Thread-safety
+           self.soldInCountries.append(country) 
         }
     }
 }
@@ -51,12 +51,29 @@ class NespressoCoffeMachine {
 4. Static Type properties
 
 ```swift
-struct NespressoSingelton {
+struct NespressoCoffeMachineSingelton {
+    
     static let sharedInstance = NespressoSingelton()   //Thread-safe  (and lazy loaded)
 
     //private initializer guarantees that there is only way 
     //to create this struct, using the sharedInstance property
     private init() {}
+    
+    private var soldInCountries = ["Sweden", "Italy", "Germany"]
+    let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent)
+
+    var soldIn : [String] {
+        let result = myDispatchQueue.sync {
+            return soldInCountries  //Thread-safe
+            }
+        return result
+    }
+
+    func addCountry(country: String) {
+        myDispatchQueue.async(flags: .barrier) {
+           self.soldInCountries.append(country) //Thread-safe
+        }
+    }
 }
 
 ```
