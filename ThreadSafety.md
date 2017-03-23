@@ -12,7 +12,7 @@ There are a few ways of protecting shared data, i.e. making it thread safe.
 
 ```swift
 class NespressoCoffeMachine {
-     private var soldInCountries = ["Sweden", "Italy", "Germany"]
+    private var soldInCountries = ["Sweden", "Italy", "Germany"]
     let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent)
 
     var soldIn : [String] {
