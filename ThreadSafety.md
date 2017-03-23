@@ -55,8 +55,8 @@ struct NespressoCoffeMachineSingelton {
     
     static let sharedInstance = NespressoSingelton()   //Thread-safe  (and lazy loaded)
 
-    //private initializer guarantees that there is only way 
-    //to create this struct, using the sharedInstance property
+    //private initializer guarantees that there is only one way 
+    //to create this struct, by using the sharedInstance property
     private init() {}
     
     private var soldInCountries = ["Sweden", "Italy", "Germany"]
