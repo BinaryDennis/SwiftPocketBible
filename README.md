@@ -25,10 +25,10 @@ Improve this README file.....
 
 
 ## To be added 
-- [ ] Protocol examples
+- [ ] [Protocol examples](ProtocolExamples.md) 
+- [ ] [Swift meta types](MetaTypes.md)
 - [ ] How to choose between struct or class
 - [ ] Background tasker
-- [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] queue
 - [ ] dequeue
