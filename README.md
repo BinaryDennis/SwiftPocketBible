@@ -58,5 +58,6 @@ Improve this README file.....
 - [ ] GCD breif  overview and examples
 - [ ] Operation breif  overview and examples
 - [ ] Core data breif overview
+- [ ] final, class, static 
 - [ ] Swift properties examples
 - [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)
