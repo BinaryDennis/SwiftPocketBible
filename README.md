@@ -26,6 +26,7 @@ Improve this README file.....
 
 ## To be added 
 - [ ] Protocol examples
+- [ ] How to choose between struct or class
 - [ ] Background tasker
 - [ ] swift meta types and examples
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
