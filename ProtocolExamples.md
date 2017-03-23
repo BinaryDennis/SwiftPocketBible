@@ -1,7 +1,7 @@
 # Protocol examples
 
 
-```
+```swift
 protocol Bird : CustomStringConvertible 
 {
     var name: String { get }
