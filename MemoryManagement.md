@@ -4,7 +4,7 @@ For _reference_ types, i.e. classes, Swift uses automated reference counting (AR
 This is done at compile-time and is thus much better than traditional garbage collection which is done at run-time.
 
 Each time a strong reference to an object is created, the (strong) reference count of that object increases.
-When that reference is removed, variable holding that reference is set to nil, the (strong) reference count of that object decreases.
+When that reference is removed (variable holding that reference is set to nil), the (strong) reference count of that object decreases.
 Once the (strong) reference count of an object is 0, the object gets deallocted from memory (unless its unowned reference count is not zero, read more about that below).
 
 If a closure captures a variable that is a reference type, then the closure will maintain a strong reference (increasing its strong reference count) to that object. To avoid strong references in closures, use a **capture list** and specify _weak_ or _unowned_ before the variable name.
