@@ -1,25 +1,16 @@
-# Swifties
-:sparkles: Swift Utilites :sparkles:
+# :blue_book: Swifties
+The Swift pocket Bible is a collection of brief explanations and examples of various important aspects of Swift :sparkles:
 
-Improve this README file.....
 
-## General info
+## Overview info
+In the `OverviewInfo` folder there are a handful of markdown files briefly explaining various important aspects of Swift, eg:
 
-### :floppy_disk: Memory management
-  Swift [Memory management](OverviewInfo/MemoryManagement.md)
-
-### :mailbox_with_mail: Dispatching
-  Swift [Dispatching](OverviewInfo/Dispatching.md)
-
-### :syringe: Dependency Injection
- [Dependency Injection](OverviewInfo/DependencyInjection.md)
-
-### :closed_lock_with_key: Thread Safety
- [Thread Safety](OverviewInfo/ThreadSafety.md)
-
-### :id: Meta types
-  Swift [Meta Types](OverviewInfo/MetaTypes.md)
-
+- :floppy_disk: Swift [Memory management](OverviewInfo/MemoryManagement.md)
+- :mailbox_with_mail: Swift [Dispatching](OverviewInfo/Dispatching.md)
+- :syringe: [Dependency Injection](OverviewInfo/DependencyInjection.md) in Swift
+- :closed_lock_with_key: [Thread Safety](OverviewInfo/ThreadSafety.md) in Swift
+- :id: Swift [Meta Types](OverviewInfo/MetaTypes.md)
+  
 
 ## Extensions
 In the `Extensions` folder there are a handful of useful Extensions, e.g.:
