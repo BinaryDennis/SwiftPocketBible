@@ -1,5 +1,5 @@
-# :blue_book: Swifties
-The Swift pocket Bible is a collection of brief explanations and examples of various important aspects of Swift :sparkles:
+# :blue_book: The Swift Pocket Bible
+The **Swift Pocket Bible** is a collection of brief explanations and examples of various important aspects of Swift :sparkles:
 
 
 ## Overview info
