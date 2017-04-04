@@ -5,28 +5,43 @@ Improve this README file.....
 
 ## General info
 
-### Memory management
-:camel: Swift [memory management](MemoryManagement.md) overview
+### :floppy_disk: Memory management
+  Swift [Memory management](OverviewInfo/MemoryManagement.md)
 
-### Dispatching
-:camel: Swift [dispatching](Dispatching.md) primer
+### :mailbox_with_mail: Dispatching
+  Swift [Dispatching](OverviewInfo/Dispatching.md)
 
-### Dependency Injection
-:camel: [Dependency Injection](DependencyInjection.md) 101
+### :syringe: Dependency Injection
+ [Dependency Injection](OverviewInfo/DependencyInjection.md)
 
-### Thread Safety
-:camel: [Thread Safety](ThreadSafety.md) overview
+### :closed_lock_with_key: Thread Safety
+ [Thread Safety](OverviewInfo/ThreadSafety.md)
 
-### Swizzling
-:camel: [Swizzling](UIViewController+Swizzling.swift) example
-
-### Associated Objects
-:camel: [Associated objects](UIViewController+AscObject.swift) example
+### :id: Meta types
+  Swift [Meta Types](OverviewInfo/MetaTypes.md)
 
 
-## To be added 
-- [ ] [Protocol examples](ProtocolExamples.md) 
-- [ ] [Swift meta types](MetaTypes.md)
+## Extensions
+In the `Extensions` folder there are a handful of useful Extensions, e.g.:
+
+- [Date+ISI8601](Extensions/Date+ISO8601.swift)
+- [Color+Hex](Extensions/UIColor+Hex.swift)
+- [UIImageView+AsyncLoading](Extensions/UIImageView+AsyncLoading.swift)
+- [UIView+ResponderChain](Extensions/UIView+ResponderChain.swift)
+
+
+## Examples
+  In the `Examples` folder there are a handful of examples, e.g.:
+
+ - [Swizzling](Examples/UIViewController+Swizzling.swift)
+ - [Associated objects](Examples/UIViewController+AscObject.swift)
+ - [Protocols](Examples/ProtocolExamples.swift)
+
+
+
+## To be added
+- [ ] [Protocol examples]
+- [ ] [Swift meta types]
 - [ ] How to choose between struct or class
 - [ ] Background tasker
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
@@ -37,7 +52,7 @@ Improve this README file.....
 - [ ] double linked list
 - [ ] linked list
 - [ ] stack
-- [ ] mergeSort, quickSort & insertionSort 
+- [ ] mergeSort, quickSort & insertionSort
 - [ ] binarySearch
 - [ ] numberOfOccurances
 - [ ] find top most view controller
@@ -50,11 +65,11 @@ Improve this README file.....
 - [ ] findMaxSingleSellProfit
 - [ ] custom fun iterators
 - [ ] nsuserdefaults wrapper
-- [ ] multipart datatask request 
+- [ ] multipart datatask request
 - [ ] Breif overview of design patterns
 - [ ] GCD breif  overview and examples
 - [ ] Operation breif  overview and examples
 - [ ] Core data breif overview
-- [ ] final, class, static 
+- [ ] final, class, static
 - [ ] Swift properties examples
 - [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)

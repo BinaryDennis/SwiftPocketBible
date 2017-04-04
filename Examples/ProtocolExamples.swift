@@ -1,19 +1,15 @@
-# Protocol examples
-
-
-```swift
-protocol Bird : CustomStringConvertible 
+protocol Bird : CustomStringConvertible
 {
     var name: String { get }
     var canFly: Bool { get }
 }
 
-extension Bird 
+extension Bird
 {
     var canFly: Bool { return self is Flyable }
 }
 
-extension CustomStringConvertible where Self: Bird 
+extension CustomStringConvertible where Self: Bird
 {
     var description: String {
         return canFly ? "I can fly" : "Guess I’ll just sit here :["
@@ -31,7 +27,7 @@ func topSpeed<R: Sequence>(of racers: R) -> Double where R.Iterator.Element == R
 topSpeed(of: racers[1...3])
 
 
-extension Sequence where Iterator.Element == Racer 
+extension Sequence where Iterator.Element == Racer
 {
     func topSpeed() -> Double {
         return self.max(by:{ $0.speed < $1.speed })?.speed ?? 0
@@ -50,7 +46,7 @@ extension Score  {
     static func ==(lhs: Self, rhs: Self) -> Bool {
         return lhs.value == rhs.value
     }
-    
+
     static func <(lhs: Self, rhs: Self) -> Bool {
         return lhs.value < rhs.value
     }
@@ -61,6 +57,3 @@ struct RacingScore: Score {
 }
 
 RacingScore(value: 40) > RacingScore(value: 30)
-
-
-```
