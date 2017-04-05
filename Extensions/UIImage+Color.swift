@@ -1,7 +1,7 @@
 extension UIImage {
 
-    class func imageFrom(color: UIColor) -> UIImage {
-        let rect = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 1, height: 1))
+    class func imageFrom(color: UIColor, size: CGSize = CGSize(width: 1, height: 1) ) -> UIImage {
+        let rect = CGRect(origin: CGPoint(x: 0, y:0), size: size)
 
         UIGraphicsBeginImageContext(rect.size)
 
