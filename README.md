@@ -17,8 +17,13 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 
 - [Date+ISI8601](Extensions/Date+ISO8601.swift)
 - [Color+Hex](Extensions/UIColor+Hex.swift)
+- [UIImage+Color](Extensions/UIImage+Color.swift)
+- [UIImage+Cropping](Extensions/UIImage+Cropping.swift)
 - [UIImageView+AsyncLoading](Extensions/UIImageView+AsyncLoading.swift)
+- [UIScrollView+Center](Extensions/UIScrollView+Center.swift)
+- [UIView+Image](Extensions/UIView+Image.swift)
 - [UIView+ResponderChain](Extensions/UIView+ResponderChain.swift)
+
 
 
 ## Examples
@@ -64,3 +69,4 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [ ] final, class, static
 - [ ] Swift properties examples
 - [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)
+- [ ] Run loop modes (see https://developer.apple.com/videos/play/wwdc2012/223/)
