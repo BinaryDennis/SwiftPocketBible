@@ -71,3 +71,62 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)
 - [ ] Run loop modes (see https://developer.apple.com/videos/play/wwdc2012/223/)
 - [ ] UIResponderChain
+
+
+### Swift 3.1 highlights
+Swift 3.1 adds two new functions for data filtering to the standard library’s Sequence protocol, `.prefix(while:)` and `.drop(while:)`
+
+```swift
+let interval = fibonacci.prefix(while: {$0 < 1000}).drop(while: {$0 < 100})
+for element in interval {
+  print(element) // 144 233 377 610 987
+}
+```
+
+Swift 3.1 implements failable initializers for all numeric types.
+```swift
+//If gradeDouble is a fractional value, such as 6.33, it will fail. If it can be represented exactly with an Int, such as 6.0, it will succeed
+let grade = Int(exactly: gradeDouble)
+```
+
+
+Swift 3.1 lets you extend a generic type with a concrete type constraint. Previously, you couldn’t extend a type like this because the constraint had to be a protocol.
+```swift
+// Swift 3.1
+extension Optional where Wrapped == String {
+  var isBlank: Bool {
+    return self?.isBlank ?? true
+  }
+}
+```
+
+Swift 3.1 allows you to mix nested types with generics.
+```swift
+class Directory<T> {
+
+  class File {
+     let title: T
+  }
+  
+  let title: T
+}
+```
+
+Swift 3.1 extends the `@available` attribute to support specifying Swift version numbers in addition to its existing platform versions.
+```swift
+ 
+@available(swift 3.1)
+func intVersion(number: Double) -> Int? {
+  return Int(exactly: number)
+}
+ 
+@available(swift, introduced: 3.0, obsoleted: 3.1)
+func intVersion(number: Double) -> Int {
+  return Int(number)
+}
+```
+
+In Swift 3.1, you can convert non-escaping closures to escaping ones temporarily by using the new `withoutActuallyEscaping()` helper function. 
+See [SE-0103](https://github.com/apple/swift-evolution/blob/master/proposals/0103-make-noescape-default.md)
+
+
