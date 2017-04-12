@@ -85,7 +85,8 @@ for element in interval {
 
 Swift 3.1 implements failable initializers for all numeric types.
 ```swift
-//If gradeDouble is a fractional value, such as 6.33, it will fail. If it can be represented exactly with an Int, such as 6.0, it will succeed
+//If gradeDouble is a fractional value, such as 6.33, it will fail. 
+//If it can be represented exactly with an Int, such as 6.0, it will succeed
 let grade = Int(exactly: gradeDouble)
 ```
 
