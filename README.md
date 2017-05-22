@@ -36,7 +36,8 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 
 
 ## To be added
-- [ ] [Protocol examples]  (class compliant, eg : class)
+- [ ] [Protocol examples]  
+- [ ] More about protocols (class-only protocol, eg : class) + Delegates
 - [ ] [Swift meta types]
 - [ ] How to choose between struct or class
 - [ ] Background tasker
