@@ -74,6 +74,8 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [ ] Availability attributes (see https://www.raywenderlich.com/139077/availability-attributes-swift)
 - [ ] Run loop modes (see https://developer.apple.com/videos/play/wwdc2012/223/)
 - [ ] UIResponderChain
+- [ ] Array/Collection value or reference types based on its element
+- [ ] Example of custom collection and sequence
 
 
 ### Swift 3.1 highlights
