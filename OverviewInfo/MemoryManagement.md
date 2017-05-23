@@ -67,6 +67,9 @@ If the unowned reference count is not 0, when the strong reference count becomes
 Avoid creating **strong** reference cycles!
 
 ### weak
+The `Person` and `Apartment` example below, shows a situation where two properties, **both of which are allowed to be nil**, have the **potential to cause a strong reference cycle**. This scenario is best resolved with a weak reference.
+
+
 ```swift
 class Person {
     let name: String
@@ -87,13 +90,13 @@ class Apartment {
 }
 ```
 
-Use a weak reference to avoid reference cycles whenever it is possible for that reference to have a missing value at some point in its life. If the reference **always** has a value, use an _unowned_ reference instead.
-
-In the Apartment example above, it is appropriate for an apartment to be able to have no tenant at some point in its lifetime, and so a weak reference is an appropriate way to break the reference cycle in this case.
-
 
 
 ### unowned
+
+The `Customer` and `CreditCard` example below shows a situation where one property that is **allowed to be nil** and another property that **cannot be nil** have the **potential to cause a strong reference cycle**. This scenario is best resolved with an unowned reference.
+
+
 ```swift
 class Customer {
     let name: String
@@ -118,9 +121,37 @@ class CreditCard {
 
 ```
 
-In the example above, a customer may or may not have a credit card, but a credit card will **always** be associated with a customer, so an _unowned_ reference is used to break a potential strong reference cycle.
+### unowned + implicitly unwrapped optional
 
+There is a third scenario, in which **both properties should always have a value**, and **neither property should ever be nil** once initialization is complete. In this scenario, it is useful to combine an _unowned_ property on one class with an _implicitly unwrapped optional property_ on the other class.
 
+This enables both properties to be accessed directly (without optional unwrapping) once initialization is complete, while still **avoiding a strong reference cycle**.
 
+```swift
+class Country {
+    let name: String
+
+    var capitalCity: City!    //a country must have a captital city at all times. Implicitly unrwapped optional
+
+    init(name: String, capitalName: String) {
+        self.name = name
+        self.capitalCity = City(name: capitalName, country: self)
+    }
+}
+ 
+class City {
+    let name: String
+    
+    unowned let country: Country   //a city must belong to a country at all times. 
+    
+    init(name: String, country: Country) {
+        self.name = name
+        self.country = country
+    }
+}
+
+var country = Country(name: "Sweden", capitalName: "Stockholm")
+
+```
 
 
