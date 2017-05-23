@@ -59,3 +59,68 @@ The **weak** reference counter for all reference type objects is stored in a **g
 
 If an objects strong reference count becomes 0, its dealloced from memory, but only if it's unowned reference count is also 0. 
 If the unowned reference count is not 0, when the strong reference count becomes 0, the objects memory still allocated but marked as invalid. This is whats called a **zombie** memory/object. Accessing a zombie object will result in a run-time crash.
+
+
+## How to use?
+
+### strong
+Avoid creating **strong** reference cycles!
+
+### weak
+```swift
+class Person {
+    let name: String
+   
+    init(name: String) { self.name = name }
+    
+    var apartment: Apartment?  //a person may or may not have an appartment
+
+}
+ 
+class Apartment {
+    let unit: String
+    
+    init(unit: String) { self.unit = unit }
+    
+    weak var tenant: Person? //an apartment may have no tenant at some point in its lifetime
+
+}
+```
+
+Use a weak reference to avoid reference cycles whenever it is possible for that reference to have a missing value at some point in its life. If the reference **always** has a value, use an _unowned_ reference instead.
+
+In the Apartment example above, it is appropriate for an apartment to be able to have no tenant at some point in its lifetime, and so a weak reference is an appropriate way to break the reference cycle in this case.
+
+
+
+### unowned
+```swift
+class Customer {
+    let name: String
+    
+    var card: CreditCard?   //a customer may or may not have a credit card
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+ 
+class CreditCard {
+    let number: UInt64
+    
+    unowned let customer: Customer.  //but a credit card will always be associated with a customer
+
+    init(number: UInt64, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+}
+
+```
+
+In the example above, a customer may or may not have a credit card, but a credit card will **always** be associated with a customer, so an _unowned_ reference is used to break a potential strong reference cycle.
+
+
+
+
+
