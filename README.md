@@ -11,6 +11,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 - :closed_lock_with_key: [Thread Safety](OverviewInfo/ThreadSafety.md) in Swift
 - :id: Swift [Meta Types](OverviewInfo/MetaTypes.md)
 - :pencil2: How to [comment](OverviewInfo/Commenting.md) in Swift files
+- :underage: [Access control](OverviewInfo/AccessControl.md) in Swift
   
 
 ## Extensions
