@@ -11,7 +11,7 @@ There are a few ways of protecting shared data, i.e. making it thread safe.
 1. Dispatch barriers
 
 ```swift
-struct NespressoCoffeMachine {
+struct NespressoCoffeMachineSingelton {
     private var soldInCountries = ["Sweden", "Italy", "Germany"]
     let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent) //Thread-safety
 
@@ -42,7 +42,7 @@ struct NespressoCoffeMachine {
 
 let coffeBeanTypes = ["Arabica", "Robusta"]   //Thread-safe  (and lazy loaded)
 
-class NespressoCoffeMachine {
+class NespressoCoffeMachineSingelton {
   // bla bla bla...
 }
 
@@ -53,7 +53,7 @@ class NespressoCoffeMachine {
 ```swift
 struct NespressoCoffeMachineSingelton {
     
-    static let sharedInstance = NespressoSingelton()   //Thread-safe  (and lazy loaded)
+    static let sharedInstance = NespressoCoffeMachineSingelton()   //Thread-safe  (and lazy loaded)
 
     //private initializer guarantees that there is only one way 
     //to create this struct, by using the sharedInstance property
