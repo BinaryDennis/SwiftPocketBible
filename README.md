@@ -44,7 +44,6 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [ ] [Swift meta types]
 - [ ] How to choose between struct or class
 - [ ] Background tasker
-- [ ] @escaping
 - [ ] extension on Int  1.million
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] copy-on-write for custom class as example
