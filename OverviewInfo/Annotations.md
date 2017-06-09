@@ -15,3 +15,11 @@
 ## @escaping
 
 ## @available
+
+* can be used to deprecate methods (you will receive a warning where the method is called)
+```swift
+@available(*, deprecated)
+func myDeprecatedMethod() { 
+// ...
+}
+```
