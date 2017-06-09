@@ -20,9 +20,9 @@ printLater{"Tomorrow is going to be nice"}
  
 
 ## @autoclosure
-* @autoclosure attribute to automatically create a closure around an argument
-* work only if the argument is a closure/block that takes **no input arguments**, _e.g. () -> String_
-* makes the caller side a bit more convenient, i.e. does not have to pass in the argument with block syntax
+* use @autoclosure attribute to automatically create a closure around an argument
+* work only if the argument is of block syntax that takes **no input arguments**, _e.g. () -> String_
+* caller can pass the argument as a normal parameter instead of using block syntax
 
 ```swift
 func printNow(_ f: @autoclosure () -> String) {
@@ -58,6 +58,10 @@ printLater("Tomorrow is going to be nice")
 
 
 ## @available
+
+
+**FIXME: MORE TO BE ADDED **
+
 
 * can be used to deprecate methods (you will receive a warning where the method is called)
 ```swift
