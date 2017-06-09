@@ -32,7 +32,7 @@ func printNow(_ f: @autoclosure () -> String) {
 printNow("What a wonderful day")
 ```
 
-Instead of...
+_Instead of..._
 
 ```swift
 func printNow(_ f: () -> String) {
@@ -43,7 +43,7 @@ printNow{"What a wonderful day"}
 
 ```
 
-autoclosure + escaping
+### autoclosure + escaping
 ```swift
 func printLater(_ f:@autoclosure @escaping () -> String) {
     let later : DispatchTime = DispatchTime.now() + 2.0
@@ -60,7 +60,7 @@ printLater("Tomorrow is going to be nice")
 ## @available
 
 
-**FIXME: MORE TO BE ADDED **
+**FIXME: MORE TO BE ADDED**
 
 
 * can be used to deprecate methods (you will receive a warning where the method is called)
