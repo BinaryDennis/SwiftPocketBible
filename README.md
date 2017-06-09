@@ -12,6 +12,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 - :id: Swift [Meta Types](OverviewInfo/MetaTypes.md)
 - :pencil2: How to [comment](OverviewInfo/Commenting.md) in Swift files
 - :underage: [Access control](OverviewInfo/AccessControl.md) in Swift
+- :cyclone: [Annotations](OverviewInfo/Annotations.md) in Swift
   
 
 ## Extensions
