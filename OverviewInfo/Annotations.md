@@ -69,8 +69,42 @@ printLater("Tomorrow is going to be nice")
 
 ## @available
 
+@available attributes may be placed directly above any declaration in your code, other than a stored variable. So it works for these:
+- Classes
+- Structs
+- Enums
+- Enum cases
+- Methods
+- Functions
 
-**FIXME: MORE TO BE ADDED**
+The platforms you can target with @available are these:
+- iOS
+- OSX
+- macOS (alias for OSX)
+- tvOS
+- watchOS
+- iOSApplicationExtension
+- OSXApplicationExtension
+- tvOSApplicationExtension
+- watchOSApplicationExtension
+
+```swift
+@available(iOS, introduced: 9.0).  //To indicate the first version of an operating system that a declaration is available
+@available(iOS 9.0, *)             //The shorthand, and preferred syntax, for marking the first version available
+
+//multiple introcuded attributes
+@available(iOS, introduced: 9.0)
+@available(macOS, introduced: 10.12)
+// is replaced by
+@available(iOS 9.0, macOS 10.12, *)
+
+@available(watchOS, unavailable)  
+@available(watchOS, deprecated: 3.0)
+@available(watchOS, obsoleted: 3.0)
+
+@available(OSX, deprecated:10.11, message: "Use generateContactInfo()")    //Add a custom warning message
+@available(iOS, unavailable, renamed: "NewName")                           //Unavailable method is renamed to... 
+```
 
 - In Swift 3.1 the @available attribute can be used to specify Swift version numbers
 ```swift
@@ -88,10 +122,8 @@ func intVersion(number: Double) -> Int {
 }
 ```
 
-- @available can also be used to deprecate methods (you will receive a warning where the method is called)
-```swift
-@available(*, deprecated)
-func myDeprecatedMethod() { 
-  // ...
-}
-```
+
+**Note: The asterisk in the shorthand syntax tells the compiler that the declaration is available on the minimum deployment target on any other platform.**
+
+For example, `@available(iOS 9.0, *)` states that the declaration is available on iOS 9.0 or greater, as well as on the deployment target of any other platform you support in the project.
+On the other hand, `@available(*, unavailable)` states that the declaration is unavailable on every platform supported in your project.
