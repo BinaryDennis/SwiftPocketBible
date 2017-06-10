@@ -121,21 +121,6 @@ class Directory<T> {
 }
 ```
 
-Swift 3.1 extends the `@available` attribute to support specifying Swift version numbers in addition to its existing platform versions.
-```swift
- 
-@available(swift 3.1)
-func intVersion(number: Double) -> Int? {
-  return Int(exactly: number)
-}
- 
-@available(swift, introduced: 3.0, obsoleted: 3.1)
-func intVersion(number: Double) -> Int {
-  return Int(number)
-}
-```
 
-In Swift 3.1, you can convert non-escaping closures to escaping ones temporarily by using the new `withoutActuallyEscaping()` helper function. 
-See [SE-0103](https://github.com/apple/swift-evolution/blob/master/proposals/0103-make-noescape-default.md)
 
 
