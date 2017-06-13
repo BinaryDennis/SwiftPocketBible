@@ -39,6 +39,7 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 
 
 ## To be added
+- [ ] Initialization process
 - [ ] [Protocol examples]  
 - [ ] More about protocols (class-only protocol, eg : class) + Delegates
 - [ ] [Swift meta types]
