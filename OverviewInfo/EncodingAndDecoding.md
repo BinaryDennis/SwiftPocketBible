@@ -1,8 +1,8 @@
-# Codable
-
-### :warning: Note: Codable is only available in Swift 4.0 and later
+# Encoding and decoding
 
 `Codable` is a protocol your types can conform to for easy encoding and decoding (serialization and deserialization). If a type implements `Codable`, and all it's properties also implement `Codable` (Foundation types typically do), the Swift compiler will automatically implement the protocol for you without any extra work required.
+
+### :warning: Note: Codable is only available in Swift 4.0 and later
 
 ```swift
 struct Person: Codable {
