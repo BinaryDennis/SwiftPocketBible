@@ -1,6 +1,6 @@
 # Encoding and decoding
 
-`Codable` is a protocol your types can conform to for easy encoding and decoding (serialization and deserialization). If a type implements `Codable`, and all it's properties also implement `Codable` (Foundation types typically do), the Swift compiler will automatically implement the protocol for you without any extra work required.
+`Codable` is a protocol a type can conform to for easy encoding and decoding (serialization and deserialization). If a type implements `Codable`, and all it's properties also implement `Codable` (Foundation types typically do), the Swift compiler will automatically implement the protocol without any extra work required.
 
 ### :warning: Note: Codable is only available in Swift 4.0 and later
 
@@ -59,8 +59,7 @@ The definition of `Codable` looks like this:
 public typealias Codable = Decodable & Encodable
 ```
 
-`Codable` consists of two protocols: `Decodable` and `Encodable`. By conforming to `Codable`, your type will be both encodable and decodable. If you only need specific support for either encoding or decoding, conforming to either `Encodable` or `Decodable` may make more sense than conforming to `Codable`.
-
+`Codable` consists of two protocols: `Decodable` and `Encodable`. By conforming to `Codable`, the type will be both encodable and decodable. If specific support for only encoding or decoding is needed, conforming to either `Encodable` or `Decodable` may make more sense than conforming to `Codable`.
 
 ### Custom serialization
 
