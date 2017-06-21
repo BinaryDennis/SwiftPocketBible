@@ -5,7 +5,8 @@ Using objective-c runtime lib, you can utilize 'associatedObject' to get the sam
 */
 extension UIViewController {
 
-    //static keys inside a private struct dont mess up the global namespace - in contrast to a static var outside the class
+    //static keys inside a private struct dont mess up the global namespace, in contrast to a static var outside the extension definition
+    //But this only works since UIViewController is a subclass of NSObject
     private struct AssociatedKeys {
         static var DescriptiveName = "dc_DescriptiveName"
     }
