@@ -117,7 +117,7 @@ p2.printDoc()  //dispatched dynamically -> "printDoc from Photo"
 ```
 
 ### Extra: Inheritance + Protocols
-Some solutions might need to utilize both protocols and subclassing, do how does the dispatching work in these cases? 
+Some solutions might need to utilize both protocols and subclassing, how does the dispatching work in these cases? 
 The short answer is that **Inheritance dispatching > Protocol dispatching**
 
 ```swift
