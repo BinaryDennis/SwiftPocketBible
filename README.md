@@ -36,6 +36,7 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
  - [Swizzling](Examples/UIViewController+Swizzling.swift)
  - [Associated objects](Examples/UIViewController+AscObject.swift)
  - [Protocols](Examples/ProtocolExamples.swift)
+ - [Reusable .xib views](Examples/NibView.swift)
 
 
 
