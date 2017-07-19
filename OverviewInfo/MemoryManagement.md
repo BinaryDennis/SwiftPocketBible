@@ -1,9 +1,11 @@
 # Memory Management
 
-For _reference_ types, i.e. classes, Swift uses automated reference counting (ARC) to manage memory. 
-This is done at compile-time and is thus much better than traditional garbage collection which is done at run-time.
+Swift does not have a garbage collection system like Java, that frees up unused memory in _run-time_.
+Instead Swift has something called **ARC**, Automatic Reference Counting, which is a _compile-time_ memory management system.
 
-Each time a strong reference to an object is created, the (strong) reference count of that object increases.
+_Refrence_ types in Swift (e.g. Classes), are handled by ARC. But _value_ types (e.g. Structs, Strings) obviosly don't use ARC since they are copied when passed along.
+
+Each time a strong reference to an object is created, the (strong) _reference count_ of that object increases.
 When that reference is removed (variable holding that reference is set to nil), the (strong) reference count of that object decreases.
 Once the (strong) reference count of an object is 0, the object gets deallocted from memory (unless its unowned reference count is not zero, read more about that below).
 
@@ -14,7 +16,6 @@ controller.delegate = { [weak view] in
 }
 ```
 
-Swift _value_ types obviosly don't use reference counter as they are copied when passed along.
 
 
 ## References
