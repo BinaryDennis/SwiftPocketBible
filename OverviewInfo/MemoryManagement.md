@@ -3,12 +3,14 @@
 Swift does not have a garbage collection system like Java, that frees up unused memory in _run-time_.
 Instead Swift has something called **ARC**, Automatic Reference Counting, which is a _compile-time_ memory management system.
 
-_Refrence_ types in Swift (e.g. Classes), are handled by ARC. But _value_ types (e.g. Structs, Strings) obviosly don't use ARC since they are copied when passed along.
+_Reference_ types in Swift (e.g. Classes), are handled by ARC. But _value_ types (e.g. Structs, Strings) obviously don't need reference counting since they are copied when passed along.
 
 Each time a strong reference to an object is created, the (strong) _reference count_ of that object increases.
 When that reference is removed (variable holding that reference is set to nil), the (strong) reference count of that object decreases.
 Once the (strong) reference count of an object is 0, the object gets deallocted from memory (unless its unowned reference count is not zero, read more about that below).
 
+In essence, as long as anything has a strong reference to an object, it will not be deallocated.
+ 
 If a closure captures a variable that is a reference type, then the closure will maintain a strong reference (increasing its strong reference count) to that object. To avoid strong references in closures, use a **capture list** and specify _weak_ or _unowned_ before the variable name.
 ```swift
 controller.delegate = { [weak view] in
@@ -23,6 +25,7 @@ controller.delegate = { [weak view] in
 There are 3 ways of referencing in Swift
 
 1. **Strong**
+  - is the default reference type
   - always increases the reference count 
   - can be an _optional_ or not
   - can be _let_ or _var_
@@ -65,7 +68,24 @@ If the unowned reference count is not 0, when the strong reference count becomes
 ## How to use?
 
 ### strong
-Avoid creating **strong** reference cycles!
+By default, variables are of type _strong_ if nothing else stated. Strong references can safely be used in situtations where there is a **linear** relationship (in opposite to **circular** relationship), i.e. when a parent object references a child object (may be recursive) and the child object _never_ references back to the parent object. 
+
+
+```swift
+class Book {
+    let author = Author() //strong reference to Author (which is a child object to Book)
+}
+class Author {
+    let address = Address() //strong reference to Address (which is a child object to Author)
+}
+
+class Address {   
+}
+
+```
+
+Keep in mind to avoid creating **strong** reference cycles (ie. creating circular relationships between parent & child objects using only strong references).
+
 
 ### weak
 The `Person` and `Apartment` example below, shows a situation where two properties, **both of which are allowed to be nil**, have the **potential to cause a strong reference cycle**. This scenario is best resolved with a weak reference.
