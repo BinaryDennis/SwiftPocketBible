@@ -1,3 +1,5 @@
+// MUCH MORE WILL BE ADDED HERE, ALONG WITH EXPLANATIONS
+
 protocol Bird : CustomStringConvertible
 {
     var name: String { get }
