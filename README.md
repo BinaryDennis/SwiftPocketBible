@@ -5,6 +5,7 @@ The **Swift Pocket Bible** is a collection of brief explanations and examples of
 ## Overview info
 In the `OverviewInfo` folder there are a handful of markdown files briefly explaining various important aspects of Swift, eg:
 
+- :ballot_box_with_check: [Properties](OverviewInfo/Properties.md) in Swift
 - :floppy_disk: Swift [Memory management](OverviewInfo/MemoryManagement.md)
 - :mailbox_with_mail: Swift [Dispatching](OverviewInfo/Dispatching.md)
 - :syringe: [Dependency Injection](OverviewInfo/DependencyInjection.md) in Swift
