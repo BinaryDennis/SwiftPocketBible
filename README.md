@@ -28,7 +28,8 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [UIScrollView+Center](Extensions/UIScrollView+Center.swift)
 - [UIView+Image](Extensions/UIView+Image.swift)
 - [UIView+ResponderChain](Extensions/UIView+ResponderChain.swift)
-
+- [UITextView extensions](Extensions/UITextViewExtensions.swift)
+- [UITableView extensions](Extensions/UITableViewExtensions.swift)
 
 
 ## Examples
@@ -38,12 +39,7 @@ In the `Examples` folder there are a handful of examples, e.g.:
  - [Associated objects](Examples/UIViewController+AscObject.swift)
  - [Protocols](Examples/ProtocolExamples.swift)
  - [Reusable .xib views](Examples/NibView.swift)
- - [UITextView extensions](Examples/UITextViewExtensions.swift)
- - [UITableView extensions](Examples/UITableViewExtensions.swift)
 
 
 ## To be added
-There are a lot of other things that will be added to this Swift Pocket Bible, they are listed in [Things to be added](ToBeAdded.md) 
-
-
-
+There are a lot of other things that will be added to this Swift Pocket Bible, they are listed in [Things to be added](ToBeAdded.md)
