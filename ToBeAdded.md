@@ -1,9 +1,10 @@
 # Things to be added 
 
 ## Wish list
+- [ ] weak var weakSelf = self (when using self.myfunction)
 - [ ] Initialization process
-- [ ] [Protocol examples]  
-- [ ] More about protocols (class-only protocol, eg : class) + Delegates
+- [ ] Protocols (self requirement, extensions, default implementations, class, objc, where clauses) + Delegates
+- [ ] [Protocol examples]
 - [ ] [Swift meta types]
 - [ ] How to choose between struct or class
 - [ ] Background tasker
