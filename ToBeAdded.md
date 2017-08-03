@@ -3,12 +3,13 @@
 ## Wish list
 - [ ] weak var weakSelf = self (when using self.myfunction)
 - [ ] Initialization process
-- [ ] Protocols (self requirement, extensions, default implementations, class, objc, where clauses) + Delegates
+- [ ] Protocols (self requirement, extensions, default implementations, class, objc, where clauses, generic protocols) + Delegates
 - [ ] [Protocol examples]
 - [ ] [Swift meta types]
 - [ ] How to choose between struct or class
 - [ ] Background tasker
 - [ ] extension on Int  1.million
+- [ ] Example of custom collection and sequence
 - [ ] operations on collections that are missing in std-lib (ex from Advanced Swift Book)
 - [ ] copy-on-write for custom class as example
 - [ ] dynamic dispatch as example
@@ -20,11 +21,9 @@
 - [ ] GCD breif  overview and examples
 - [ ] Operation breif  overview and examples
 - [ ] final, class, static
-- [ ] Swift properties examples
 - [ ] Run loop modes (see https://developer.apple.com/videos/play/wwdc2012/223/)
 - [ ] UIResponderChain
 - [ ] Array/Collection value or reference types based on its element
-- [ ] Example of custom collection and sequence
 - [ ] find top most view controller
 
 
