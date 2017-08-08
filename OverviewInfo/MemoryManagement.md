@@ -144,7 +144,7 @@ class CreditCard {
 
 ### unowned + implicitly unwrapped optional
 
-There is a third scenario, in which **both properties should always have a value**, and **neither property should ever be nil** once initialization is complete. In this scenario, it is useful to combine an _unowned_ property on one class with an _implicitly unwrapped optional property_ on the other class.
+There is a third scenario, in which **both properties should always have a value**, and **neither property should ever be nil** once initialization is complete. In this scenario, it is useful to combine an `unowned` property on one class with an _implicitly unwrapped optional property_ on the other class.
 
 This enables both properties to be accessed directly (without optional unwrapping) once initialization is complete, while still **avoiding a strong reference cycle**.
 
@@ -174,5 +174,55 @@ class City {
 var country = Country(name: "Sweden", capitalName: "Stockholm")
 
 ```
+
+## Reference cycles in blocks 
+Blocks "captures" variables outside itself as `strong` (default value), `weak` or `unowned`. 
+ 
+Use a **capture list** to specify how the block shall "capture" variables. 
+
+
+```swift
+func send(message: String, completionBlock: () -> ()) -> Void {
+    //send message somehow, perhaps asynchronous and upon response execute the completion block
+    completionBlock()   //execute completion block
+}
+
+
+send(message: "Hello world", 
+     completionBlock: { 
+        self.showSuccessMessage()     //strong reference to self
+     })
+
+
+send(message: "Hello world", 
+     completionBlock: { [weak self] in
+        self.showSuccessMessage()     //weak reference to self
+     })
+```
+
+### Functions are blocks too
+A function is simply a block with a name. This means that anywhere a block is expected, a function could be sent instead.
+
+In a block, you can use `weak` in the capture list, but using a function instead, a `weak` reference to that variable before created **before** calling the function. 
+
+```swift
+func send(message: String, completionBlock: () -> ()) -> Void {
+    //send message somehow, perhaps asynchronous and upon response execute the completion block
+    completionBlock()   //execute completion block
+}
+
+func showSuccessMessage() {
+ //show something cool
+}
+
+send(message: "Hello world", 
+     completionBlock: self.showSuccessMessage) //strong reference to self
+
+weak var weakSelf = self
+send(message: "Hello world", 
+     completionBlock: weakSelf?.showSuccessMessage) //weak reference to self
+
+```
+
 
 
