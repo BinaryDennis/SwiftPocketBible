@@ -39,7 +39,7 @@ In the `Examples` folder there are a handful of examples, e.g.:
  - [Associated objects](Examples/UIViewController+AscObject.swift)
  - [Protocols](Examples/ProtocolExamples.swift)
  - [Reusable .xib views](Examples/NibView.swift)
- - [NSTimer] (Examples/NSTimer.swift)
+ - [NSTimer](Examples/NSTimer.swift)
 
 
 ## To be added
