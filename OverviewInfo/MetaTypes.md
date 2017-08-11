@@ -79,3 +79,19 @@ animal2.race
 
 type(of:animal2)
 ```
+
+
+## Comparing Types
+The _type_ of a class is itself a class so the operator `===` can be used for comparison.
+Notice that this cannot be applied for *structs*
+
+```swift
+var dog: Dog()   //Dog is a class, not a struct
+
+if dog === Animal.self {
+    print("yes, dog is of type Animal or its subclass")
+} else {
+    print("no, dog is not of type Animal or its subclass")
+}
+
+```
