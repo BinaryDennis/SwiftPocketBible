@@ -20,7 +20,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 ## Extensions
 In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 
-- [Date+ISI8601](Extensions/Date+ISO8601.swift)
+- [Date extensions](Extensions/DateExtensions.swift)
 - [Color+Hex](Extensions/UIColor+Hex.swift)
 - [UIImage+Color](Extensions/UIImage+Color.swift)
 - [UIImage+Cropping](Extensions/UIImage+Cropping.swift)
