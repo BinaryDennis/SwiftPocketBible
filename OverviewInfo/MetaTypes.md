@@ -18,41 +18,40 @@
 
 
 ```swift
-
 class Animal {
     var name : String
-    
+
     init() {
         name = "Giraff"
     }
-    
-	//Every subclass of Animal must inherit or reimplement init(name:)
+
+    //Every subclass of Animal must inherit or reimplement init(name:)
     required init(name:String) {
         self.name = name
     }
 
-	// class method & factory method
-    // Self - "an instance of whatever type this is at runtime." 
-	// self - in a class methods, refers to the static type
+    // class method & factory method
+    // Self - "an instance of whatever type this is at runtime."
+    // self - in a class methods, refers to the static type
     class func makeAndName() -> Self {
-		return self.init(name:"Fido")
+        return self.init(name:"Fido")
     }
-    
-	// in normal methods, not class methods, use type(of:) on the instance to get type and then init
+
+    // in normal methods, not class methods, use type(of:) on the instance to get type and then init
     func havePuppy(name:String) -> Self {
         return type(of:self).init(name:name)
     }
-            
+
 }
 
 class Dog : Animal {
     var race : String
-    
+
     override init() {
         race = "bulldog"
         super.init()
     }
-    
+
     required init(name: String) {
         race = "pincher"
         super.init(name: name)
@@ -61,8 +60,8 @@ class Dog : Animal {
 
 func createAnimalInstance(of typeName: Animal.Type) -> Animal {
     //the compiler is in doubt as to whether the init(name:) initializer is implemented by every possible subtype of Animal. To reassure it, we must declare that initializer with the required keyword
-    
-	return typeName.init(name: "unanmed")
+
+    return typeName.init(name: "unanmed")
 }
 
 let dog = createAnimalInstance(of: Dog.self)
