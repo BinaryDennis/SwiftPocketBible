@@ -21,6 +21,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 
 - [Date extensions](Extensions/DateExtensions.swift)
+- [Double extensions](Extensions/DoubleExtensions.swift)
 - [Color+Hex](Extensions/UIColor+Hex.swift)
 - [UIImage+Color](Extensions/UIImage+Color.swift)
 - [UIImage+Cropping](Extensions/UIImage+Cropping.swift)
