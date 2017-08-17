@@ -24,9 +24,10 @@ open class NibView: UIView {
 
     private func nibSetup() {
         view = loadViewFromNib()
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.fit(view: view, with: self)
+
     }
 
     private func loadViewFromNib() -> UIView {
