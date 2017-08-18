@@ -24,6 +24,7 @@
 - [ ] UIResponderChain
 - [ ] Array/Collection value or reference types based on its element
 - [ ] find top most view controller
+- [ ] Concurrency in Swift (see https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782)
 
 
 ## other stuff
