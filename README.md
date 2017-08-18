@@ -15,6 +15,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 - :underage: [Access control](OverviewInfo/AccessControl.md) in Swift
 - :cyclone: [Annotations](OverviewInfo/Annotations.md) in Swift
 - :package: [Encoding and decoding](OverviewInfo/EncodingAndDecoding.md) in Swift 4
+- :bar_chart: [Auto layout in UITableView](OverviewInfo/TableViewAutolayout.md)
   
 
 ## Extensions
