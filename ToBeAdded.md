@@ -1,7 +1,6 @@
 # Things to be added 
 
 ## Wish list
-- [ ] weak var weakSelf = self (when using self.myfunction)
 - [ ] Initialization process
 - [ ] Protocols (self requirement, extensions, default implementations, class, objc, where clauses, generic protocols) + Delegates
 - [ ] [Protocol examples]
