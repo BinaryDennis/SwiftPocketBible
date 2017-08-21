@@ -35,9 +35,12 @@ func tableView(_ tableView: UITableView,
 
 ## iOS8 and above
 In **iOS8** the 2 callbacks methods mentioned above can be skipped/ignored/removed and instead you can set the estimated height and row heigth on the table view.
-This way you can layback and let auto-layout do all the magic. 
 
 But this requires obviously that all the cells in the table view are auto-layout'ed. So you cannot mix-and-match with cells that are auto-layout'ed and cells that aren't.
+
+Also, this solution "assumes" that all cells are almost equal height. If you have a cell with 3x higher than another cell, you might observe some strange scroll behaviours. In those cases you can also implement the UITableViewDelegate method _estimatedHeightForRowAt:indexPath_ to give a specific estimate for each cell. 
+
+
 
 ```swift
 tableView.estimatedRowHeight = 170.   //should be greater than 0 and as close to the real size of the "median" cell
