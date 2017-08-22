@@ -32,6 +32,8 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [UIView+ResponderChain](Extensions/UIView+ResponderChain.swift)
 - [UITextView extensions](Extensions/UITextViewExtensions.swift)
 - [UITableView extensions](Extensions/UITableViewExtensions.swift)
+- [NSLayoutConstraint extensions](Extensions/NSLayoutConstraintExtensions.swift)
+- [Collection extensions](Extensions/CollectionExtensions.swift)
 
 
 ## Examples
