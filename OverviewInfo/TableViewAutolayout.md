@@ -55,4 +55,6 @@ tableView.sectionHeaderHeight = UITableViewAutomaticDimension
 ```
 
 
+Note that if you set one of the properties (rowHeight or sectionHeaderHeight) you must set the other as well (estimatedRowHeight or estimatedSectionHeaderHeight), otherwise `UIView-Encapsulated-Layout-Height` constraint errors will most likely occur.
+
      
