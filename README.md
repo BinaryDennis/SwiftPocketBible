@@ -42,7 +42,6 @@ In the `Examples` folder there are a handful of examples, e.g.:
  - [Swizzling](Examples/UIViewController+Swizzling.swift)
  - [Associated objects](Examples/UIViewController+AscObject.swift)
  - [Protocols](Examples/ProtocolExamples.swift)
- - [Reusable .xib views](Examples/NibView.swift)
  - [NSTimer](Examples/NSTimer.swift)
 
 
