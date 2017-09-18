@@ -122,6 +122,20 @@ func intVersion(number: Double) -> Int {
 }
 ```
 
+- Other examples
+```swift
+if #available(iOS 10.3, *) {
+     //do something
+}
+
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+#else
+    // Not yet supported
+#endif
+```
 
 **Note: The asterisk in the shorthand syntax tells the compiler that the declaration is available on the minimum deployment target on any other platform.**
 
