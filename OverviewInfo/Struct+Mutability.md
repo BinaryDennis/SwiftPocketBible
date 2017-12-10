@@ -6,11 +6,11 @@
 
 ## Collections of value types
 
-- Immutable Collections containing value types:
+- Immutable Collections containing value types: [declared as `let`]
   - value types with mutating behaviour      -> _can NOT change any element in the Collection_
   - value types with no mutating behaviour   -> _can NOT change any element in the Collection_
 
-- Mutable Collections containing value types:
+- Mutable Collections containing value types: [declared as `var`]
   - value types with mutating behaviour      -> _**CAN** change any element in the Collection_
   - value types with no mutating behaviour   -> _can NOT change any element in the Collection_
 
