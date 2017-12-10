@@ -1,3 +1,16 @@
+// MARK: - SUMMARY
+
+// Collections in Swift are value types if the containing elements are values types
+// Collections in Swift are reference type if the containing elements are reference types
+
+// 1. Immutable collections of value types
+//    a. value types with mutating behaviour      -> can NOT change any element in the Collection
+//    b. value types with no mutating behaviour   -> can NOT change any element in the Collection
+// 2. Mutable collections of value types
+//    a. value types with mutating behaviour      -> CAN change any element in the Collection
+//    b. value types with no mutating behaviour   -> can NOT change any element in the Collection
+
+
 import Foundation
 
 struct ValueAccount {
@@ -43,7 +56,7 @@ class ClassAccount {
     }
 }
 
-// MARK - Collections in Swift are value types if the containing elements are values types
+// MARK: - Collections in Swift are value types if the containing elements are values types
 var account1 = ValueAccount(balance: 1)
 var account2 = ValueAccount(balance: 2)
 
@@ -60,7 +73,7 @@ account1.balance //balance is still 1
 copyValueAccounts[0] = ValueAccount(balance: 7)
 copyValueAccounts[0].balance //balance is 7
 
-// MARK - Collections in Swift are reference type if the containing elements are reference types
+// MARK: - Collections in Swift are reference type if the containing elements are reference types
 var account4 = ClassAccount(balance: 4)
 var account5 = ClassAccount(balance: 5)
 
@@ -75,13 +88,4 @@ account4.balance //balance is 44
 // cannot change the Collection since its declared as immutable (i.e. let)
 //copyValueAccounts[0] = ClassAccount(balance: 7)  //error!
 
-
-
-// MARK: - SUMMARY
-// 1. immutable collection of value types
-//    a. value types with mutating behaviour      -> can NOT change any element in the Collection
-//    b. value types with no mutating behaviour   -> can NOT change any element in the Collection
-// 2. mutable collection of value types
-//    a. value types with mutating behaviour      -> CAN change any element in the Collection
-//    b. value types with no mutating behaviour   -> can NOT change any element in the Collection
 
