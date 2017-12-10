@@ -16,6 +16,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 - :cyclone: [Annotations](OverviewInfo/Annotations.md) in Swift
 - :package: [Encoding and decoding](OverviewInfo/EncodingAndDecoding.md) in Swift 4
 - :bar_chart: [Auto layout in UITableView](OverviewInfo/TableViewAutolayout.md)
+- :recycle: [Mutability of Value types](OverviewInfo/Struct+Mutability.md)
   
 
 ## Extensions
