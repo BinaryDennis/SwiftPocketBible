@@ -14,6 +14,9 @@
   - value types with mutating behaviour      -> _**CAN** change any element in the Collection_
   - value types with no mutating behaviour   -> _can NOT change any element in the Collection_
 
+## Inout
+Parameters with `inout` prefix, is similar to mutating of self in a Struct. I.e the parameter is first copied, then mutated and finally returned back to the call-site. The parameter is only mutated inside the function scope, thus it will not have any side-effect outside of the function is specified in. See example below.
+
 
 ## Example
 
@@ -33,8 +36,10 @@ struct ValueAccount {
         balance += amount
     }
     
-    mutating func transfer(amount: Int, from: inout ValueAccount) {
-        balance += amount
+    //Parameters with `inout` prefix, is similar to mutating of self in a Struct.
+    //The input parameter will be copied, mutated (only in the scope of this function) and returned back to callee
+    mutating func transfer(amount: Int, from: inout ValueAccount) {. 
+        balance += amount
         from.balance -= amount
     }
 }
@@ -46,7 +51,8 @@ func deposit(amount: Int, into account: inout ValueAccount) {
 
 var account = ValueAccount(balance: 0)
 let other = account
-deposit(amount: 10, into: &account)
+
+deposit(amount: 10, into: &account)  //this is NOT passing a reference to the variable account!
 account.balance
 other.balance
 
