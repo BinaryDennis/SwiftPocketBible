@@ -1,7 +1,7 @@
 # Mutability of Values types
 
-- **Collections** in Swift are `value` type if the **containing** elements are `value` types
 - **Collections** in Swift are `reference` type if the **containing** elements are `reference` types
+- **Collections** in Swift are `value` type if the **containing** elements are `value` types, even if the value types can be **mutated**
 
 
 ## Collections of value types
