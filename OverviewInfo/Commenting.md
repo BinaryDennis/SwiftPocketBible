@@ -47,6 +47,20 @@ func repeatString(str: String, times: Int) throws -> String {
     return Repeat(count: 5, repeatedValue: "Hello").joinWithSeparator("")
 }
 
+// You can reference either the external or internal parameter label, it doesnt matter which:
+
+/**
+*   - parameter string: A string
+*/
+func doSomething(with string: String) {}
+
+/**
+*   - parameter with: A string
+*/
+func doSomething(with string: String) {}
+
+
+
 /// Returns the magnitude of a vector in three dimensions
 /// from the given components.
 ///
