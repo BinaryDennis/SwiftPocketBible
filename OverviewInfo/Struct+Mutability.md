@@ -1,18 +1,32 @@
-# Mutability of Values types
+## Collections, value or reference type?
+In Swift, Array, String, and Dictionary are all **value** types
 
-- **Collections** in Swift are `reference` type if the **containing** elements are `reference` types
-- **Collections** in Swift are `value` type if the **containing** elements are `value` types, even if the value types can be **mutated**
+## Mutability
+### Mutable Instances: var
+*Reference types*
+
+The reference can be changed (mutable): you can mutate the instance itself and also change the instance reference.
+
+*Value types*
+
+The instance can be changed (mutable): you can change the properties of the instance
+
+*Collections of value types*
+
+Elements with mutating behaviour: **CAN** change any element in the Collection
+
+Elements without mutating behaviour: **CAN'T** change any element in the Collection
 
 
-## Collections of value types
+### Immutable Instances: let
+*Reference types*
 
-- Immutable Collections containing value types: [declared as `let`]
-  - value types with mutating behaviour      -> _can NOT change any element in the Collection_
-  - value types with no mutating behaviour   -> _can NOT change any element in the Collection_
+The reference remains constant (immutable): you can’t change the instance reference, but you can mutate the instance itself.
 
-- Mutable Collections containing value types: [declared as `var`]
-  - value types with mutating behaviour      -> _**CAN** change any element in the Collection_
-  - value types with no mutating behaviour   -> _can NOT change any element in the Collection_
+*Value types*
+
+The instance remains constant (immutable): you can’t change the properties of the instance, regardless whether a property is declared with let or var.
+
 
 ## Inout
 Parameters with `inout` prefix, is similar to mutating of self in a Struct. I.e the parameter is first copied, then mutated and finally returned back to the call-site. The parameter is only mutated inside the function scope, thus it will not have any side-effect outside of the function is specified in. See example below.
