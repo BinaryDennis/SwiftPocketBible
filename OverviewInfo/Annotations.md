@@ -69,6 +69,23 @@ printLater("Tomorrow is going to be nice")
 
 ## @available
 
+`@available(...)` attribute *sets* visibility but `if #available(...)` *checks* for visibility
+
+Example
+```swift
+@available(iOS 11, *)
+func styleMe() {
+...
+}
+
+
+if #available(iOS 11, *)
+ styleMe()
+else
+ oldStying()
+endif
+
+
 @available attributes may be placed directly above any declaration in your code, other than a stored variable. So it works for these:
 - Classes
 - Structs
