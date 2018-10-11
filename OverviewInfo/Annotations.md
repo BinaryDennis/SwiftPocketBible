@@ -79,11 +79,11 @@ func styleMe() {
 }
 
 
-if #available(iOS 11, *)
+if #available(iOS 11, *) {
  styleMe()
-else
+} else {
  oldStying()
-endif
+}
 ```
 
 @available attributes may be placed directly above any declaration in your code, other than a stored variable. So it works for these:
