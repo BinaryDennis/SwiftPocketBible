@@ -73,13 +73,13 @@ printLater("Tomorrow is going to be nice")
 
 Example
 ```swift
-@available(iOS 11, *)
+@available(iOS 11.0, *)
 func styleMe() {
 ...
 }
 
 
-if #available(iOS 11, *) {
+if #available(iOS 11.0, *) {
  styleMe()
 } else {
  oldStying()
