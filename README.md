@@ -30,6 +30,7 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [UIImageView+AsyncLoading](Extensions/UIImageView+AsyncLoading.swift)
 - [UIScrollView+Center](Extensions/UIScrollView+Center.swift)
 - [UIView+Image](Extensions/UIView+Image.swift)
+- [UIView+Nib](Extensions/UIView+Nib.swift)
 - [UIView+ResponderChain](Extensions/UIView+ResponderChain.swift)
 - [UITextView extensions](Extensions/UITextViewExtensions.swift)
 - [UITableView extensions](Extensions/UITableViewExtensions.swift)
