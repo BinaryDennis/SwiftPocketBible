@@ -196,7 +196,7 @@ send(message: "Hello world",
 
 send(message: "Hello world", 
      completionBlock: { [weak self] in
-        self.showSuccessMessage()     //weak reference to self
+        self?.showSuccessMessage()     //weak reference to self
      })
 ```
 
