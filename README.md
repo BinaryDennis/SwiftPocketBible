@@ -38,6 +38,7 @@ In the `Extensions` folder there are a handful of useful Extensions, e.g.:
 - [Collection extensions](Extensions/CollectionExtensions.swift)
 - [Optional extensions](Extensions/Optional+Misc.swift)
 - [URL extensions](Extensions/URL+ExpressibleByStringLiteral.swift)
+- [Equatable extensions](Extensions/EquatableExtensions.swift)
 
 
 
