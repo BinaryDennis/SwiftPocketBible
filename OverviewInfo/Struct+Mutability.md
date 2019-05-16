@@ -1,6 +1,8 @@
 ## Collections, value or reference type?
 In Swift, Array, String, and Dictionary are all **value** types
 
+They behave much like a simple int value in C, acting as a unique instance of that data. You don’t need to do anything special — such as making an explicit copy — to prevent other code from modifying that data behind your back. **Importantly, you can safely pass copies of values across threads without synchronization.** 
+
 ## Mutability
 ### Mutable Instances: var
 *Reference types*
