@@ -32,8 +32,48 @@ struct NespressoCoffeMachineSingelton {
 
 2. Semaphores
 
-```swift
+To avoid thread starvation and thread prio inversion, its a good idea to use semaphores among threads of the same priority.
 
+```swift
+let semaphore = DispatchSemaphore(value: 1) //value indicates number of threads allowed to access the shared resource at the same time
+
+//request the semaphore, ie lock
+ semaphore.wait() //blocks the thread if the resouces is not available
+ 
+ //release the semaphore, ie unlock
+ semaphore.signal() 
+
+```
+
+Playground example
+```swift
+import Foundation
+import PlaygroundSupport
+
+let higherPriority = DispatchQueue.global(qos: .userInitiated)
+let lowerPriority = DispatchQueue.global(qos: .utility)
+
+
+let semaphore = DispatchSemaphore(value: 1)
+
+func asyncPrint(queue: DispatchQueue, symbol: String) {
+    queue.async {
+        print("\(symbol) waiting")
+        semaphore.wait()  // requesting the resource
+
+        for i in 0...10 {
+            print(symbol, i)
+        }
+
+        print("\(symbol) signal")
+        semaphore.signal() // releasing the resource
+    }
+}
+
+asyncPrint(queue: higherPriority, symbol: "🔴")
+asyncPrint(queue: lowerPriority, symbol: "🔵")
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 ```
 
 3. Global constants
@@ -77,10 +117,9 @@ struct NespressoCoffeMachineSingelton {
 }
 
 ```
-5. obj_sync 
+5. Single-queue
+
+An easy, but perhaps not architectually robust, way of achieving thread safety is to make sure all access to the shared resource comes from the same thread. Perhaps not the main thread to prevent blocking the UI.
 
 
 
-```swift
-
-```
