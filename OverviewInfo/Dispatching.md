@@ -1,10 +1,20 @@
 # Swift method dispatching
 
+## Overview
+
+Swift uses static dispatch as default, and uses dynamic dispatch only as a last resort.
+
 Free functions, and methods called on structs, are _statically_ dispatched. 
 This means the function that'll be called is known at compile time. 
 This also means the compiler might be able to **inline** the function, i.e. not call the function at all, but instead replace it with the code the function would execute.
 
 Methods on classes or protocols can be _dynamically_ dispatched. 
+
+## Performaance
+**inline** functions **>** **static/virtual** dispactch **>** **dynamic** dispatch
+
+Static dispatching is faster than dynamic dispatching, but dynamic dispatching offers more flexibility (e.g. KVO is based on dynamic dispatching).
+
 
 ## Polymorphism
 Polymorphic behavior, i.e. behavior that varies depending on the types involved, can be achieved in 4 ways in Swift
