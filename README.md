@@ -11,6 +11,7 @@ In the `OverviewInfo` folder there are a handful of markdown files briefly expla
 - :syringe: [Dependency Injection](OverviewInfo/DependencyInjection.md) in Swift
 - :closed_lock_with_key: [Thread Safety](OverviewInfo/ThreadSafety.md) in Swift
 - :id: Swift [Meta Types](OverviewInfo/MetaTypes.md)
+- :memo: [Attributes](OverviewInfo/Attributes.md) in Swift
 - :pencil2: How to [comment](OverviewInfo/Commenting.md) in Swift files
 - :underage: [Access control](OverviewInfo/AccessControl.md) in Swift
 - :cyclone: [Annotations](OverviewInfo/Annotations.md) in Swift
