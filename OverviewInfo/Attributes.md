@@ -29,6 +29,32 @@ class Test {
 }
 ```
 
+## some
+The `some` attributes is used to return back `Opaque` types. This solves the Self-requirement problem in Protocols.
 
+```swift 
+protocol Fruit { }
+
+func giveFruits() -> [Fruit] { ... }
+
+///extension Fruit: Equatable <<--- compilation error. Fruit can only be used as a generic constraint because it has Self or associated type requirements.
+```
+
+U cant compare things conforming to Fruit, because you dont know what their types (hidden behind the protocol-wrapper) are. The protocol is "non-opaque". 
+```swift
+struct Apple: Fruit { ... }
+extension Int: Fruit { }
+
+//would not make sense to compare two things conforming to Fruit protocol
+```
+
+But using attribute `some` will return `opaque` types which solve this problem, because even though we just see a protocol being used, internally the Swift compiler knows exactly what that protocol actually resolves to.
+
+```swift
+func giveFruits() -> some [Fruit] { ... }
+```
+
+An important note here is that functions with opaque return types must always return one specific type.
+ 
 ## inline
-
+bla bla bla
