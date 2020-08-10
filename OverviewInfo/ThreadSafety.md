@@ -11,23 +11,30 @@ There are a few ways of protecting shared data, i.e. making it thread safe.
 1. Dispatch barriers
 
 ```swift
-struct NespressoCoffeMachineSingelton {
-    private var soldInCountries = ["Sweden", "Italy", "Germany"]
-    let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent) //Thread-safety
+final class Messenger {
 
-    var soldIn : [String] {
-        let result = myDispatchQueue.sync { //Thread-safety
-            return soldInCountries  
-            }
-        return result
+    private var messages: [String] = []
+
+    private var queue = DispatchQueue(label: "messages.queue", attributes: .concurrent)
+
+    var lastMessage: String? {
+        return queue.sync {
+            messages.last
+        }
     }
 
-    func addCountry(country: String) {
-        myDispatchQueue.async(flags: .barrier) { //Thread-safety
-           self.soldInCountries.append(country) 
+    func postMessage(_ newMessage: String) {
+        queue.sync(flags: .barrier) {
+            messages.append(newMessage)
         }
     }
 }
+
+let messenger = Messenger()
+// Executed on Thread #1
+messenger.postMessage("Hello SwiftLee!")
+// Executed on Thread #2
+print(messenger.lastMessage) // Prints: Hello SwiftLee!
 ```
 
 2. Semaphores
