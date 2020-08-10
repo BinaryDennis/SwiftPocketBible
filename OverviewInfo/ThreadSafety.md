@@ -24,7 +24,7 @@ final class Messenger {
     }
 
     func postMessage(_ newMessage: String) {
-        queue.sync(flags: .barrier) {
+        queue.async(flags: .barrier) {       //posting message asynchronosly so that the caller is "free" to continue directly after this call (caller is not blocked until end of execution)
             messages.append(newMessage)
         }
     }
@@ -32,9 +32,9 @@ final class Messenger {
 
 let messenger = Messenger()
 // Executed on Thread #1
-messenger.postMessage("Hello SwiftLee!")
+messenger.postMessage("Hello!")
 // Executed on Thread #2
-print(messenger.lastMessage) // Prints: Hello SwiftLee!
+print(messenger.lastMessage) // Prints: Hello!
 ```
 
 2. Semaphores
@@ -95,36 +95,7 @@ class NespressoCoffeMachineSingelton {
 
 ```
 
-4. Static Type properties
-
-```swift
-struct NespressoCoffeMachineSingelton {
-    
-    static let sharedInstance = NespressoCoffeMachineSingelton()   //Thread-safe  (and lazy loaded)
-
-    //private initializer guarantees that there is only one way 
-    //to create this struct, by using the sharedInstance property
-    private init() {}
-    
-    private var soldInCountries = ["Sweden", "Italy", "Germany"]
-    let myDispatchQueue = DispatchQueue(label: "soldInCountriesQueueName", attributes: .concurrent)
-
-    var soldIn : [String] {
-        let result = myDispatchQueue.sync {
-            return soldInCountries  //Thread-safe
-            }
-        return result
-    }
-
-    func addCountry(country: String) {
-        myDispatchQueue.async(flags: .barrier) {
-           self.soldInCountries.append(country) //Thread-safe
-        }
-    }
-}
-
-```
-5. Single-queue
+4. Single-queue
 
 An easy, but perhaps not architectually robust, way of achieving thread safety is to make sure all access to the shared resource comes from the same thread. Perhaps not the main thread to prevent blocking the UI.
 
